@@ -1,17 +1,16 @@
 #include "main.h"
 
 /**
- * print_hex - prints an hexadecimal number.
- * @v: argument value.
+ * print_addn_hex - prints an hexadecimal number.
+ * @numb: argument value.
  * Return: counter.
  */
-int print_hex(va_list v)
+int print_addn_hex(unsigned long int numb)
 {
-	int a;
-	int *arr;
-	int counter = 0;
-	unsigned int numb = va_arg(v, unsigned int);
-	unsigned int rand = numb;
+	long int a;
+	long int *arr;
+	long int counter = 0;
+	unsigned long int rand = numb;
 
 	while (numb / 16 != 0)
 	{
@@ -19,12 +18,12 @@ int print_hex(va_list v)
 		counter++;
 	}
 	counter++;
-	arr = malloc(counter * sizeof(int));
+	arr = malloc(counter * sizeof(long int));
 
 	for (a = 0; a < counter; a++)
 	{
 		arr[a] = rand % 16;
-		rand /= 16;
+		rand = rand / 16;
 	}
 	for (a = counter - 1; a >= 0; a--)
 	{
@@ -35,3 +34,4 @@ int print_hex(va_list v)
 	free(arr);
 	return (counter);
 }
+
