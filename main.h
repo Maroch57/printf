@@ -9,8 +9,6 @@
 #include <unistd.h>
 
 #define NULL_STR "(null)"
-#define FLAG_INIT {0,0,0,0,0}
-#define MOD_INIT {0,0,0,0}
 #define BUFFER_SIZE 1024
 
 /**
